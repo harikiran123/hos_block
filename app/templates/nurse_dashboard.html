@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurse/Staff Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dashboard-container {
+            background-color: #fff;
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            transition: box-shadow 0.3s ease;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        .dashboard-section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            a {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Nurse/Staff Dashboard</h1>
+        
+        <div class="dashboard-section">
+            <h2>Patient Management</h2>
+            <a href="{{ url_for('main.manage_patients') }}">Manage Patients</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Task Management</h2>
+            <a href="{{ url_for('main.manage_tasks') }}">Manage Tasks</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Shift Scheduling</h2>
+            <a href="{{ url_for('main.shift_scheduling') }}">Manage Shifts</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Patient Monitoring</h2>
+            <a href="{{ url_for('main.patient_monitoring') }}">Monitor Patients</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Resource Requests</h2>
+            <a href="{{ url_for('main.resource_allocation') }}">Request Resources</a>
+        </div>
+    </div>
+</body>
+</html>

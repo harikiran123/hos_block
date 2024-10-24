@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            background-color: #343a40;
+            width: 250px;
+            height: 100%;
+            padding: 30px 15px;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h1 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .sidebar .nav-item {
+            background-color: #495057;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar .nav-item:hover {
+            background-color: #6c757d;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .content {
+            flex-grow: 1;
+            background-color: #e9ecef;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .content .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .content .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        .content .section a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .content .section a:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #868e96;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Patient Dashboard</h1>
+        <div class="nav-item">
+            <a href="{{ url_for('main.patient_records') }}">Patient Records</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('main.profile_management') }}">Profile Management</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('main.search_hospitals') }}">Hospital Search</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('main.book_appointment') }}">Book Appointment</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('main.book_ambulance') }}">Book Ambulance</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('main.prescription_management') }}">Prescription Access</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('main.manage_orders') }}">Medical Orders</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('main.notifications') }}">Notifications</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome, Patient!</h1>
+        <div class="section">
+            <h2>Manage Your Health</h2>
+            <p>Access and manage your medical records, book appointments, and stay updated with your health journey.</p>
+            <a href="{{ url_for('main.patient_records') }}">View Patient Records</a>
+        </div>
+
+        <div class="section">
+            <h2>Hospital Services</h2>
+            <p>Search for hospitals, book appointments, or get an ambulance whenever needed.</p>
+            <a href="{{ url_for('main.search_hospitals') }}">Find Hospitals</a>
+        </div>
+
+        <div class="section">
+            <h2>Prescriptions & Orders</h2>
+            <p>Access your prescriptions, order medicines, and manage all your medical needs.</p>
+            <a href="{{ url_for('main.prescription_management') }}">View Prescriptions</a>
+        </div>
+
+        <div class="section">
+            <h2>Stay Informed</h2>
+            <p>Stay updated with the latest notifications and alerts for your appointments and medications.</p>
+            <a href="{{ url_for('main.notifications') }}">View Notifications</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Hospital Management System</p>
+        </div>
+    </div>
+</body>
+</html>

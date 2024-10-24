@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Allocation</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resource Allocation</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Resource ID</th>
+                <th>Resource Name</th>
+                <th>Department</th>
+                <th>Allocation Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for resource in resources %}
+            <tr>
+                <td>{{ resource[0] }}</td>  <!-- Resource ID -->
+                <td>{{ resource[1] }}</td>  <!-- Resource Name -->
+                <td>{{ resource[2] }}</td>  <!-- Department -->
+                <td>{{ resource[3] }}</td>  <!-- Allocation Status -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

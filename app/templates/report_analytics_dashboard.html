@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports and Analytics Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dashboard-container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .report-section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 600px) {
+            .dashboard-container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            a {
+                padding: 8px 16px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h1>Reports and Analytics Dashboard</h1>
+        
+        <div class="report-section">
+            <h2>Patient Statistics</h2>
+            <a href="{{ url_for('main.patient_statistics') }}">View Patient Statistics</a>
+        </div>
+
+        <div class="report-section">
+            <h2>Hospital Performance</h2>
+            <a href="{{ url_for('main.hospital_performance') }}">View Hospital Performance</a>
+        </div>
+
+        <div class="report-section">
+            <h2>Appointment Trends</h2>
+            <a href="{{ url_for('main.appointment_trends') }}">View Appointment Trends</a>
+        </div>
+
+        <div class="report-section">
+            <h2>Resource Allocation</h2>
+            <a href="{{ url_for('main.resource_allocation') }}">Analyze Resource Allocation</a>
+        </div>
+    </div>
+
+</body>
+</html>

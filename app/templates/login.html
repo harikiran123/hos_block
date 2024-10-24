@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Hospital Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        
+        <!-- Flash messages for errors -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST" action="{{ url_for('main.login') }}">
+            {{ form.hidden_tag() }}  <!-- CSRF protection -->
+
+            <label for="username">Username:</label>
+            {{ form.username(size=32) }}  <!-- Use the form field here --> 
+
+            <label for="password">Password:</label>
+            {{ form.password(size=32) }}  <!-- Use the form field here -->
+
+            <label for="role">Role:</label>
+            {{ form.role() }}  <!-- Use the form field here -->
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Forgot Password and Username Links -->
+        <p><a href="{{ url_for('main.forgot_password') }}">Forgot Password?</a></p>
+        <p><a href="{{ url_for('main.forgot_username') }}">Forgot Username?</a></p>
+
+        <!-- Register link -->
+        <p>Don't have an account? <a href="{{ url_for('main.register') }}">Register here</a></p>
+    </div>
+</body>
+</html>

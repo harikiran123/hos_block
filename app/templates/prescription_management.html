@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Prescriptions</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manage Prescriptions</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Prescription ID</th>
+                <th>Doctor ID</th>
+                <th>Patient ID</th>
+                <th>Medicines</th>
+                <th>Instructions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prescription in prescriptions %}
+            <tr>
+                <td>{{ prescription[0] }}</td>  <!-- Prescription ID -->
+                <td>{{ prescription[1] }}</td>  <!-- Doctor ID -->
+                <td>{{ prescription[2] }}</td>  <!-- Patient ID -->
+                <td>{{ prescription[4] }}</td>  <!-- Medicines -->
+                <td>{{ prescription[5] }}</td>  <!-- Instructions -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

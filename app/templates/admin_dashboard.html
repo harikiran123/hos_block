@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dashboard-container {
+            background-color: #fff;
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .dashboard-section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin: 5px 0;
+            padding: 10px 20px;
+            background-color: #e9f4ff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 600px) {
+            .dashboard-container {
+                width: 95%;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Admin Dashboard</h1>
+        
+        <div class="dashboard-section">
+            <h2>User Management</h2>
+            <a href="{{ url_for('main.manage_users') }}">Manage Users</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Hospital Management</h2>
+            <a href="{{ url_for('main.manage_hospitals') }}">Manage Hospitals</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Appointment Overview</h2>
+            <a href="{{ url_for('main.appointment_overview') }}">View Appointments</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Resource Allocation</h2>
+            <a href="{{ url_for('main.resource_allocation') }}">Manage Resources</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Analytics and Reporting</h2>
+            <a href="{{ url_for('main.reports_analytics_dashboard') }}">View Reports</a>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Notifications</h2>
+            <a href="{{ url_for('main.notifications_dashboard') }}">Manage Notifications</a>
+        </div>
+    </div>
+</body>
+</html>
